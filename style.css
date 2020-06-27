@@ -10,6 +10,7 @@
 
 body {
   font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 }
 
 .container {
@@ -20,10 +21,11 @@ body {
 }
 
 header {
-  padding: 1rem;
+  padding: 1.75rem;
 }
 
 header img {
+  height: 1.25rem;
 }
 
 .hero-img {
@@ -34,7 +36,7 @@ header img {
   text-transform: uppercase;
   font-size: 2.5rem;
   text-align: center;
-  padding: 3rem 2rem 1rem 2rem;
+  padding: 4rem 2rem 1rem 2rem;
   letter-spacing: 0.5rem;
   line-height: 1;
   color: hsl(0, 6%, 24%);
@@ -48,9 +50,11 @@ header img {
 .body-copy {
   color: hsl(0, 36%, 70%);
   text-align: center;
-  width: 90%;
+  width: 80%;
   margin: 0 auto 2rem auto;
   line-height: 1.5;
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 .form {
@@ -61,9 +65,11 @@ header img {
 .form-input {
   border: 1px solid hsl(0, 36%, 70%);
   border-radius: 9999px;
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 1.5rem;
+  background-color: transparent;
   color: hsl(0, 36%, 70%);
-  font-size: 1rem;
+  font-family: inherit;
+  font-size: 0.875rem;
   width: 100%;
 }
 
@@ -72,7 +78,7 @@ header img {
   justify-content: center;
   align-items: center;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.825rem 1.825rem;
   border-radius: 9999px;
   background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   position: absolute;
@@ -84,7 +90,11 @@ header img {
 
 .form-button:hover,
 .form-button:active {
-  background: linear-gradient(135deg, hsl(0, 0%, 100%) hsl(0, 100%, 98%));
+  background: linear-gradient(
+    135deg,
+    hsla(0, 80%, 86%, 0.7),
+    hsla(0, 74%, 74%, 0.7)
+  );
 }
 
 .error-icon {
