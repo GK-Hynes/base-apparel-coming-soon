@@ -6,7 +6,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 1px solid rebeccapurple;
+  /* outline: 1px solid rebeccapurple; */
 }
 
 body {
@@ -49,19 +49,23 @@ header {
   margin: 0 auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  max-width: 600px;
 }
 
 .heading-main {
   text-transform: uppercase;
   font-size: 2.5rem;
+  font-size: clamp(2.5rem, 4rem, 4vw);
   text-align: center;
   padding: 4rem 0 1rem 0;
   letter-spacing: 1rem;
   line-height: 1;
   color: hsl(0, 6%, 24%);
+  max-width: 500px;
 }
 
 .heading-main span {
+  display: block;
   font-weight: 300;
   color: hsl(0, 36%, 70%);
 }
@@ -137,6 +141,10 @@ header {
   display: block;
 }
 
+.footer {
+  background: transparent;
+}
+
 .attribution {
   font-size: 0.825rem;
   text-align: center;
@@ -147,33 +155,18 @@ header {
   color: hsl(228, 45%, 44%);
 }
 
-@media (min-width: 556px) {
+@media (min-width: 600px) {
   .container {
     background-image: url(./images/bg-pattern-desktop.svg);
-    display: grid;
-    grid-template-columns: 5fr 4fr;
-    grid-template-rows: 2fr 6fr;
-    grid-template-areas:
-      "header hero-img"
-      "main hero-img"
-      "footer footer";
+    flex-direction: row;
   }
 
-  .header {
-    grid-area: header;
+  .md-content-left {
+    flex: 5;
   }
 
-  .hero-img-container {
-    grid-area: hero-img;
-  }
-
-  .main {
-    grid-area: main;
-    max-width: 600px;
-  }
-
-  .footer {
-    grid-area: footer;
+  .md-content-right {
+    flex: 4;
   }
 
   .img-mobile {
@@ -185,7 +178,7 @@ header {
   }
 
   .logo-wrapper {
-    padding-left: 2rem;
+    padding: 2rem;
   }
 
   .logo {
@@ -193,21 +186,28 @@ header {
   }
 
   .heading-main {
-    font-size: 4rem;
     text-align: left;
+    padding: 4.5rem 0 2rem 0;
   }
 
   .body-copy {
     text-align: left;
     font-size: 1rem;
+    margin-bottom: 2.75rem;
+    line-height: 1.7;
   }
 
   .form-input {
     font-size: 1rem;
-    padding: 1rem 1.5rem;
+    padding: 1.125rem 1.5rem;
   }
 
   .form-button {
-    padding: 1rem 2.5rem;
+    padding: 1.125rem 2.5rem;
+  }
+
+  .hero-img {
+    height: 100%;
+    object-fit: cover;
   }
 }
