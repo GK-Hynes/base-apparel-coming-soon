@@ -6,6 +6,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: 1px solid rebeccapurple;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
 }
 
 .container {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -22,14 +24,25 @@ body {
 
 header {
   padding: 1.75rem;
+  display: flex;
 }
 
-header img {
+.logo-wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.logo {
   height: 1.25rem;
 }
 
 .hero-img {
   width: 100%;
+}
+
+.img-desktop {
+  display: none;
 }
 
 .main {
@@ -43,7 +56,7 @@ header img {
   font-size: 2.5rem;
   text-align: center;
   padding: 4rem 0 1rem 0;
-  letter-spacing: 0.5rem;
+  letter-spacing: 1rem;
   line-height: 1;
   color: hsl(0, 6%, 24%);
 }
@@ -60,11 +73,13 @@ header img {
   line-height: 1.5;
   font-size: 0.875rem;
   font-weight: 600;
+  max-width: 450px;
 }
 
 .form {
   position: relative;
   margin: 2rem 0;
+  max-width: 450px;
 }
 
 .form-input {
@@ -91,15 +106,12 @@ header img {
   right: 0;
   box-shadow: 0 4px 6px -1px hsl(0, 36%, 70%);
   cursor: pointer;
+  transition: opacity 300ms ease;
 }
 
 .form-button:hover,
 .form-button:active {
-  background: linear-gradient(
-    135deg,
-    hsla(0, 80%, 86%, 0.6),
-    hsla(0, 74%, 74%, 0.6)
-  );
+  opacity: 0.6;
 }
 
 .error-icon {
@@ -133,4 +145,69 @@ header img {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 556px) {
+  .container {
+    background-image: url(./images/bg-pattern-desktop.svg);
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    grid-template-rows: 2fr 6fr;
+    grid-template-areas:
+      "header hero-img"
+      "main hero-img"
+      "footer footer";
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .hero-img-container {
+    grid-area: hero-img;
+  }
+
+  .main {
+    grid-area: main;
+    max-width: 600px;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+
+  .img-mobile {
+    display: none;
+  }
+
+  .img-desktop {
+    display: block;
+  }
+
+  .logo-wrapper {
+    padding-left: 2rem;
+  }
+
+  .logo {
+    height: 2rem;
+  }
+
+  .heading-main {
+    font-size: 4rem;
+    text-align: left;
+  }
+
+  .body-copy {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .form-input {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .form-button {
+    padding: 1rem 2.5rem;
+  }
 }
