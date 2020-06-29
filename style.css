@@ -159,11 +159,11 @@ body {
   }
 
   .md-content-left {
-    flex: 5;
+    flex: 1.36;
   }
 
   .md-content-right {
-    flex: 4;
+    flex: 1;
   }
 
   .img-mobile {
