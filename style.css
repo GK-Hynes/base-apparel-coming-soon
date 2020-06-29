@@ -22,7 +22,7 @@ body {
   flex-direction: column;
 }
 
-header {
+.header {
   padding: 1.75rem;
   display: flex;
 }
@@ -65,7 +65,7 @@ header {
   margin: 0 auto;
 }
 
-.heading-main span {
+.heading-main-thin {
   display: block;
   font-weight: 300;
   color: hsl(0, 36%, 70%);
@@ -142,17 +142,14 @@ header {
   display: block;
 }
 
-.footer {
-  background: transparent;
-}
-
 .attribution {
   font-size: 0.825rem;
   text-align: center;
   padding: 1rem;
   color: hsl(0, 6%, 24%);
 }
-.attribution a {
+
+.attribution-link {
   color: hsl(228, 45%, 44%);
 }
 
@@ -210,5 +207,9 @@ header {
   .hero-img {
     height: 100%;
     object-fit: cover;
+  }
+
+  .text-center {
+    text-align: center;
   }
 }
